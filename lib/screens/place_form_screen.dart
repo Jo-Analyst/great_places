@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:great_places/widgets/image_input.dart';
 
 class PlaceFormScreen extends StatefulWidget {
   const PlaceFormScreen({super.key});
@@ -14,8 +15,14 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
       appBar: AppBar(
         title: const Text("Novo lugar"),
       ),
-      body: const Center(
-        child: Text("Form"),
+      body: Column(
+        children: const [
+          TextField(
+            decoration: InputDecoration(labelText: "Título"),
+          ),
+          SizedBox(height: 10),
+          ImageInput(),
+        ],
       ),
     );
   }
