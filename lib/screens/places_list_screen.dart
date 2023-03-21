@@ -38,6 +38,9 @@ class PlacesListScreen extends StatelessWidget {
                                 FileImage(greatPlaces.itemByIndex(index).image),
                           ),
                           title: Text(greatPlaces.itemByIndex(index).title),
+                          subtitle: Text(
+                            greatPlaces.itemByIndex(index).location!.address!,
+                          ),
                         ),
                       ),
                 child: const Center(
