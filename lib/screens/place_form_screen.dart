@@ -38,6 +38,7 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
   }
 
   void _submitForm() {
+    print(_isValidForm().toString());
     if (!_isValidForm()) return;
 
     Provider.of<GreatPlaces>(context, listen: false).addPlace(
@@ -69,6 +70,9 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
                       decoration: const InputDecoration(
                         labelText: "Título",
                       ),
+                      onChanged: (text) {
+                        setState(() {});
+                      },
                     ),
                     const SizedBox(height: 10),
                     ImageInput(_selectImage),
@@ -80,7 +84,7 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
             ),
           ),
           ElevatedButton.icon(
-            onPressed:  _isValidForm() ? _submitForm : null,
+            onPressed: _isValidForm() ? _submitForm : null,
             icon: const Icon(Icons.add),
             label: const Text("Adicionar"),
             style: ElevatedButton.styleFrom(

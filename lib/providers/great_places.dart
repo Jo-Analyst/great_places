@@ -24,8 +24,6 @@ class GreatPlaces with ChangeNotifier {
               ),
             ))
         .toList();
-
-    print(_items[0].location!.address);
   }
 
   List<Place> get items {
